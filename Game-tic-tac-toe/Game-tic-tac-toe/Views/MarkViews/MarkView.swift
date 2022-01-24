@@ -8,8 +8,19 @@
 import Foundation
 import UIKit
 
-public class MarkView: UIView {
-    
+//    MARK: Prototype pattern
+protocol Copying {
+    init(_ prototype: Self)
+}
+
+extension Copying {
+    func copy() -> Self {
+        return type(of: self).init(self)
+    }
+}
+
+public class MarkView: UIView, Copying {
+ 
     // MARK: - Properties
     
     public var lineColor: UIColor = .black
@@ -22,6 +33,13 @@ public class MarkView: UIView {
         didSet {
             label.text = turnNumbers.map { String($0) }.joined(separator: ",")
         }
+    }
+    
+    required init(_ prototype: MarkView) {
+        super.init(frame: prototype.frame)
+        self.lineColor = prototype.lineColor
+        self.lineWidth = prototype.lineWidth
+        self.textColor = prototype.textColor
     }
     
     internal private(set) lazy var shapeLayer: CAShapeLayer = {
@@ -124,4 +142,6 @@ public class MarkView: UIView {
         // meant for subclasses to override
     }
 }
+
+
 
