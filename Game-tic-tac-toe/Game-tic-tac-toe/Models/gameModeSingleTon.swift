@@ -11,9 +11,8 @@ final class gameModeSigleton {
     
     static let shared = gameModeSigleton()
     
-    var isAI: Bool = false
-    
-    var isComputerStateActive: Bool = false
+    var gameMode: GameMode?
+    var gameStatus: Bool = false
     
     private init (){}
 }

@@ -36,7 +36,7 @@
                                 </buttonConfiguration>
                                 <connections>
                                     <action selector="gameWithAIMode:" destination="wDj-In-UHg" eventType="touchUpInside" id="qZd-cn-9Yx"/>
-                                    <segue destination="adL-cc-Pau" kind="presentation" modalPresentationStyle="fullScreen" id="NE3-cR-FbC"/>
+                                    <segue destination="adL-cc-Pau" kind="presentation" identifier="goToGame" modalPresentationStyle="fullScreen" id="NE3-cR-FbC"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nqj-WC-eqo">
@@ -53,7 +53,6 @@
                                 </buttonConfiguration>
                                 <connections>
                                     <action selector="gameWithPlayerMode:" destination="wDj-In-UHg" eventType="touchUpInside" id="POj-v8-CWY"/>
-                                    <segue destination="adL-cc-Pau" kind="presentation" modalPresentationStyle="fullScreen" id="4kq-6F-DbV"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -175,9 +174,6 @@
             <point key="canvasLocation" x="136.23188405797103" y="133.25892857142856"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="4kq-6F-DbV"/>
-    </inferredMetricsTieBreakers>
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

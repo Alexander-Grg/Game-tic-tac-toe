@@ -28,28 +28,24 @@ public class ComputerState: GameState {
     
     public func begin() {
         
-        switch self.player {
-        case .first:
-            self.gameViewController?.firstPlayerTurnLabel.isHidden = false
-            self.gameViewController?.secondPlayerTurnLabel.isHidden = true
-            
-        case .second:
             self.gameViewController?.firstPlayerTurnLabel.isHidden = true
             self.gameViewController?.secondPlayerTurnLabel.isHidden = false
+        
+        if let position = randomPositions() {
+            addMark(at: position)
         }
         self.gameViewController?.winnerLabel.isHidden = true
    
     }
     
     public func addMark(at position: GameboardPosition) {
-        guard let gameBoardView = gameBoardView,
-              let position2 = randomPositions(),
-              gameBoardView.canPlaceMarkView(at: position2)
+        guard let gameBoardView = gameBoardView
         else { return }
-        gameBoardView.placeMarkView(self.markViewPrototype.copy(), at: position2)
+        gameBoard?.setPlayer(player, at: position)
+        gameBoardView.placeMarkView(self.markViewPrototype.copy(), at: position)
         self.isCompleted = true
-        gameModeSigleton.shared.isComputerStateActive = true
-        Log(.playerInput(player: self.player, position: position2))
+        gameModeSigleton.shared.gameStatus = true
+        Log(.playerInput(player: self.player, position: position))
       
     }
     

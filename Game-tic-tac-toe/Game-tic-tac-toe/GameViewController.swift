@@ -17,6 +17,7 @@ class GameViewController: UIViewController {
         self.dismiss(animated: true, completion: nil)
     }
     private let gameBoard = Gameboard()
+    private let gameMode = gameModeSigleton.shared.gameMode
     private lazy var referee = Referee(gameboard: self.gameBoard)
     private var currentState: GameState! {
         didSet {
@@ -26,31 +27,52 @@ class GameViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.setUpNames()
         
         self.goToFirstState()
         
         
         gameboardView.onSelectPosition = { [weak self] position in
             guard let self = self else { return }
-            self.currentState.addMark(at: position)
-            
+            //            self.currentState.addMark(at: position)
+            if self.currentState.isCompleted == false && self.gameMode == .versusComputer {
+                self.currentState.addMark(at: position)
+            } else if self.currentState.isCompleted && self.gameMode == .versusComputer {
+                self.goToComputerState()
+//                self.currentState.addMark(at: position)
+                self.goToFirstState()
+            } else if self.currentState.isCompleted == false && self.gameMode == .versusHuman {
+                self.currentState.addMark(at: position)
+            } else if self.currentState.isCompleted && self.gameMode == .versusHuman {
+                self.goToNextState()
+                self.currentState.addMark(at: position)
+            }
+        }
+    }
+    
+    private func setUpNames() {
+        if gameMode == .versusComputer {
+            firstPlayerTurnLabel.text = "Human"
+            secondPlayerTurnLabel.text = "Computer"
+        }
+    }
     
             
-            if self.currentState.isCompleted == true && gameModeSigleton.shared.isAI == true && gameModeSigleton.shared.isComputerStateActive == false {
-                self.goToComputerState()
-
-            } else if self.currentState.isCompleted == true && gameModeSigleton.shared.isAI == true && gameModeSigleton.shared.isComputerStateActive == true {
-                self.goToNextState()
-
-            } else if self.currentState.isCompleted == true && gameModeSigleton.shared.isAI == false && gameModeSigleton.shared.isComputerStateActive == false {
-                self.goToNextState()
-
-            }
+//            if self.currentState.isCompleted == true && gameModeSigleton.shared.isAI == true && gameModeSigleton.shared.isComputerStateActive == false {
+//                self.goToComputerState()
+//
+//            } else if self.currentState.isCompleted == true && gameModeSigleton.shared.isAI == true && gameModeSigleton.shared.isComputerStateActive == true {
+//                self.goToNextState()
+//
+//            } else if self.currentState.isCompleted == true && gameModeSigleton.shared.isAI == false && gameModeSigleton.shared.isComputerStateActive == false {
+//                self.goToNextState()
+//
+//            }
             
-        }
+        
 
         
-    }
+    
     
     
     
@@ -100,16 +122,19 @@ class GameViewController: UIViewController {
                                               gameViewController: self,
                                               gameBoard: gameBoard,
                                               gameBoardView: gameboardView)
+            gameModeSigleton.shared.gameStatus = false
+            self.goToFirstState()
         }
         
         
     }
                 
     @IBAction func restartButtonTapped(_ sender: Any) {
-        self.goToFirstState()
+        Log(.restartGame)
         self.gameBoard.clear()
         self.gameboardView.clear()
-        Log(.restartGame)
+        gameModeSigleton.shared.gameStatus = false
+        self.goToFirstState()
     }
     
 }

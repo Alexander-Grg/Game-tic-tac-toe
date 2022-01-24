@@ -12,13 +12,15 @@ class MenuViewController: UIViewController {
     
     @IBOutlet var gameVSComputerButton: UIButton!
     @IBOutlet var gameWithPlayerButton: UIButton!
+    
     @IBAction func gameWithAIMode(_ sender: Any) {
-        gameModeSigleton.shared.isAI = true
-        
+        gameModeSigleton.shared.gameMode = .versusComputer
+        performSegue(withIdentifier: "goToGame", sender: self)
     }
     
     @IBAction func gameWithPlayerMode(_ sender: Any) {
-        gameModeSigleton.shared.isAI = false
+        gameModeSigleton.shared.gameMode = .versusHuman
+        performSegue(withIdentifier: "goToGame", sender: self)
     }
     
     override func viewDidLoad() {

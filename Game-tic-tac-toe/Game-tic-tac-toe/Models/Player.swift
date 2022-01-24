@@ -10,13 +10,15 @@ import Foundation
 public enum Player: CaseIterable {
     case first
     case second
+    case computer
     
     
     
     var next: Player {
         switch self {
-        case .first: return .second
+        case .first: return gameModeSigleton.shared.gameMode == .versusComputer ? .computer: Player.second
         case .second: return .first
+        case .computer: return .first
         }
     }
 
@@ -24,7 +26,7 @@ public enum Player: CaseIterable {
     var markViewPrototype: MarkView {
         switch self {
         case .first: return Xview()
-        case .second: return Oview()
+        case .second, .computer: return Oview()
         }
     }
 }
