@@ -40,7 +40,9 @@ class GameViewController: UIViewController {
             } else if self.currentState.isCompleted && self.gameMode == .versusComputer {
                 self.goToComputerState()
 //                self.currentState.addMark(at: position)
-                self.goToFirstState()
+                self.delay(1.0) { [self] in
+                    self.goToFirstState()
+                }
             } else if self.currentState.isCompleted == false && self.gameMode == .versusHuman {
                 self.currentState.addMark(at: position)
             } else if self.currentState.isCompleted && self.gameMode == .versusHuman {
@@ -55,6 +57,11 @@ class GameViewController: UIViewController {
             firstPlayerTurnLabel.text = "Human"
             secondPlayerTurnLabel.text = "Computer"
         }
+    }
+    
+    func delay(_ delay: Double, closure: @escaping ()->()) {
+        let when = DispatchTime.now() + delay
+        DispatchQueue.main.asyncAfter(deadline: when, execute: closure)
     }
     
             
@@ -77,6 +84,10 @@ class GameViewController: UIViewController {
     
     
     private func goToFirstState() {
+        if let winner = self.referee.determineWinner() {
+            self.currentState = GameEndedState(winner: winner, gameViewController: self)
+            return
+        }
         let player = Player.first
         self.currentState = PlayerInputState(player: player,
                                              markViewProtorype: player.markViewPrototype,
