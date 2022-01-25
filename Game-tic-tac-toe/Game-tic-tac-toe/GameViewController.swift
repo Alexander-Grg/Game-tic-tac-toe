@@ -16,6 +16,7 @@ class GameViewController: UIViewController {
     @IBAction func exitButton(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
+    private var moveCount = 0
     private let gameBoard = Gameboard()
     private let gameMode = gameModeSigleton.shared.gameMode
     private lazy var referee = Referee(gameboard: self.gameBoard)
@@ -30,24 +31,26 @@ class GameViewController: UIViewController {
         self.setUpNames()
         
         self.goToFirstState()
-        
+        self.moveCount += 1
         
         gameboardView.onSelectPosition = { [weak self] position in
             guard let self = self else { return }
-            //            self.currentState.addMark(at: position)
             if self.currentState.isCompleted == false && self.gameMode == .versusComputer {
                 self.currentState.addMark(at: position)
+                self.moveCount += 1
             } else if self.currentState.isCompleted && self.gameMode == .versusComputer {
                 self.goToComputerState()
-//                self.currentState.addMark(at: position)
                 self.delay(1.0) { [self] in
                     self.goToFirstState()
+                    self.moveCount += 1
                 }
             } else if self.currentState.isCompleted == false && self.gameMode == .versusHuman {
                 self.currentState.addMark(at: position)
+                self.moveCount += 1
             } else if self.currentState.isCompleted && self.gameMode == .versusHuman {
                 self.goToNextState()
                 self.currentState.addMark(at: position)
+                self.moveCount += 1
             }
         }
     }
@@ -64,30 +67,21 @@ class GameViewController: UIViewController {
         DispatchQueue.main.asyncAfter(deadline: when, execute: closure)
     }
     
-            
-//            if self.currentState.isCompleted == true && gameModeSigleton.shared.isAI == true && gameModeSigleton.shared.isComputerStateActive == false {
-//                self.goToComputerState()
-//
-//            } else if self.currentState.isCompleted == true && gameModeSigleton.shared.isAI == true && gameModeSigleton.shared.isComputerStateActive == true {
-//                self.goToNextState()
-//
-//            } else if self.currentState.isCompleted == true && gameModeSigleton.shared.isAI == false && gameModeSigleton.shared.isComputerStateActive == false {
-//                self.goToNextState()
-//
-//            }
-            
-        
-
-        
-    
-    
     
     
     private func goToFirstState() {
         if let winner = self.referee.determineWinner() {
             self.currentState = GameEndedState(winner: winner, gameViewController: self)
+            self.moveCount = 0
             return
         }
+        
+        if moveCount >= 9 {
+            Log(.gameFinished(winner: nil))
+            self.currentState = GameEndedState(winner: nil, gameViewController: self)
+            self.moveCount = 0
+        }
+        
         let player = Player.first
         self.currentState = PlayerInputState(player: player,
                                              markViewProtorype: player.markViewPrototype,
@@ -100,7 +94,14 @@ class GameViewController: UIViewController {
     private func goToComputerState() {
         if let winner = self.referee.determineWinner() {
             self.currentState = GameEndedState(winner: winner, gameViewController: self)
+            self.moveCount = 0
             return
+        }
+        
+        if moveCount >= 9 {
+            Log(.gameFinished(winner: nil))
+            self.currentState = GameEndedState(winner: nil, gameViewController: self)
+            self.moveCount = 0
         }
         
         let player = Player.second
@@ -114,18 +115,25 @@ class GameViewController: UIViewController {
     private func goToNextState() {
         if let winner = self.referee.determineWinner() {
             self.currentState = GameEndedState(winner: winner, gameViewController: self)
+            self.moveCount = 0
             return
         }
         
-       
-            if let playerInputState = currentState as? PlayerInputState{
-                let player = playerInputState.player.next
-                self.currentState = PlayerInputState(player: player,
-                                                     markViewProtorype: player.markViewPrototype,
-                                                     gameViewController: self,
-                                                     gameBoard: gameBoard,
-                                                     gameBoardView: gameboardView)
-            }
+        if moveCount >= 9 {
+            Log(.gameFinished(winner: nil))
+            self.currentState = GameEndedState(winner: nil, gameViewController: self)
+            self.moveCount = 0
+        }
+        
+        
+        if let playerInputState = currentState as? PlayerInputState{
+            let player = playerInputState.player.next
+            self.currentState = PlayerInputState(player: player,
+                                                 markViewProtorype: player.markViewPrototype,
+                                                 gameViewController: self,
+                                                 gameBoard: gameBoard,
+                                                 gameBoardView: gameboardView)
+        }
         if let playerInputState = currentState as? ComputerState{
             let player = playerInputState.player.next
             self.currentState = ComputerState(player: player,
@@ -139,13 +147,14 @@ class GameViewController: UIViewController {
         
         
     }
-                
+    
     @IBAction func restartButtonTapped(_ sender: Any) {
         Log(.restartGame)
         self.gameBoard.clear()
         self.gameboardView.clear()
         gameModeSigleton.shared.gameStatus = false
         self.goToFirstState()
+        self.moveCount = 0
     }
     
 }

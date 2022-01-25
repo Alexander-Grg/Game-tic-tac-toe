@@ -28,6 +28,7 @@
 		623580F7279AD68900229555 /* gameModeSingleTon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 623580F6279AD68900229555 /* gameModeSingleTon.swift */; };
 		6295A9972799682E000A7FC7 /* PlayerInputState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6295A9962799682E000A7FC7 /* PlayerInputState.swift */; };
 		6295A99B27996D54000A7FC7 /* GameEndedState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6295A99A27996D54000A7FC7 /* GameEndedState.swift */; };
+		62AB154527A00018000C5A5F /* PlayerMove.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62AB154427A00018000C5A5F /* PlayerMove.swift */; };
 		62B6357E27998A4F0011D2AC /* LogAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62B6357D27998A4F0011D2AC /* LogAction.swift */; };
 		62B6358027998ACB0011D2AC /* LogCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62B6357F27998ACB0011D2AC /* LogCommand.swift */; };
 		62B6358227998C970011D2AC /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62B6358127998C970011D2AC /* Logger.swift */; };
@@ -58,6 +59,7 @@
 		623580F6279AD68900229555 /* gameModeSingleTon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = gameModeSingleTon.swift; sourceTree = "<group>"; };
 		6295A9962799682E000A7FC7 /* PlayerInputState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerInputState.swift; sourceTree = "<group>"; };
 		6295A99A27996D54000A7FC7 /* GameEndedState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameEndedState.swift; sourceTree = "<group>"; };
+		62AB154427A00018000C5A5F /* PlayerMove.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerMove.swift; sourceTree = "<group>"; };
 		62B6357D27998A4F0011D2AC /* LogAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogAction.swift; sourceTree = "<group>"; };
 		62B6357F27998ACB0011D2AC /* LogCommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogCommand.swift; sourceTree = "<group>"; };
 		62B6358127998C970011D2AC /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
@@ -144,6 +146,7 @@
 				62B6358127998C970011D2AC /* Logger.swift */,
 				62B6358327998CFF0011D2AC /* LoggerInvoker.swift */,
 				623580F6279AD68900229555 /* gameModeSingleTon.swift */,
+				62AB154427A00018000C5A5F /* PlayerMove.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -232,6 +235,7 @@
 				62B6358227998C970011D2AC /* Logger.swift in Sources */,
 				623580F5279AC2F000229555 /* MenuViewController.swift in Sources */,
 				622C30B12794ADDD00DD63A9 /* GameboardView.swift in Sources */,
+				62AB154527A00018000C5A5F /* PlayerMove.swift in Sources */,
 				622C309A2794AB7200DD63A9 /* AppDelegate.swift in Sources */,
 				622C309C2794AB7200DD63A9 /* SceneDelegate.swift in Sources */,
 				622C30BB2794AF2900DD63A9 /* GameboardPosition.swift in Sources */,

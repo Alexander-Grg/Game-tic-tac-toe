@@ -9,12 +9,13 @@ import Foundation
 
 
 public class PlayerInputState: GameState {
-
+    
     
     
     public let player: Player
     public let markViewPrototype: MarkView
     public var isCompleted: Bool = false
+    private var gameCount1: Int = 0
     private (set) weak var gameViewController: GameViewController?
     private (set) weak var gameBoard: Gameboard?
     private (set) weak var gameBoardView: GameBoardView?
@@ -35,12 +36,8 @@ public class PlayerInputState: GameState {
         case .second, .computer:
             self.gameViewController?.firstPlayerTurnLabel.isHidden = true
             self.gameViewController?.secondPlayerTurnLabel.isHidden = false
-//            gameModeSigleton.shared.gameStatus = false
-            
         }
         self.gameViewController?.winnerLabel.isHidden = true
-//        gameModeSigleton.shared.gameStatus = false
-        
     }
     
     public func addMark(at position: GameboardPosition) {
@@ -52,8 +49,6 @@ public class PlayerInputState: GameState {
         self.gameBoard?.setPlayer(self.player, at: position)
         self.gameBoardView?.placeMarkView(self.markViewPrototype.copy(), at: position)
         self.isCompleted = true
-        
-        
     }
 }
 

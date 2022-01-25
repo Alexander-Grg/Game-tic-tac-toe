@@ -10,7 +10,6 @@ import Foundation
 
 public class ComputerState: GameState {
     
-    
     public let player: Player
     public let markViewPrototype: MarkView
     public var isCompleted: Bool = false
@@ -28,14 +27,14 @@ public class ComputerState: GameState {
     
     public func begin() {
         
-            self.gameViewController?.firstPlayerTurnLabel.isHidden = true
-            self.gameViewController?.secondPlayerTurnLabel.isHidden = false
+        self.gameViewController?.firstPlayerTurnLabel.isHidden = true
+        self.gameViewController?.secondPlayerTurnLabel.isHidden = false
         
         if let position = randomPositions() {
             addMark(at: position)
         }
         self.gameViewController?.winnerLabel.isHidden = true
-   
+        
     }
     
     public func addMark(at position: GameboardPosition) {
@@ -46,10 +45,8 @@ public class ComputerState: GameState {
         self.isCompleted = true
         gameModeSigleton.shared.gameStatus = true
         Log(.playerInput(player: self.player, position: position))
-      
+        
     }
-    
-    
     
     public func randomPositions() -> GameboardPosition? {
         var arrayOfPositions: [GameboardPosition] = []

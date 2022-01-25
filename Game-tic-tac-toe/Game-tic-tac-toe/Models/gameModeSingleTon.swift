@@ -13,6 +13,9 @@ final class gameModeSigleton {
     
     var gameMode: GameMode?
     var gameStatus: Bool = false
+    var numberOfMovesPlayer1: [PlayerMove] = []
+    var numberOfMovesPlayer2: [PlayerMove] = []
+    
     
     private init (){}
 }

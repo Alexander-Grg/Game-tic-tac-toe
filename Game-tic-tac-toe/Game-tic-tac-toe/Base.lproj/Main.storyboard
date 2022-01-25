@@ -132,32 +132,41 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z4Z-TN-jZH">
-                                <rect key="frame" x="163" y="847" width="89" height="30"/>
+                                <rect key="frame" x="150" y="847" width="114" height="30"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="Exit game"/>
                                 <connections>
                                     <action selector="exitButton:" destination="adL-cc-Pau" eventType="touchUpInside" id="QQf-k9-S1Z"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Press the screen for computer to make a move" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xRz-Jq-RaR">
+                                <rect key="frame" x="135" y="49" width="144" height="61"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="hkw-He-3fH"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="z4Z-TN-jZH" firstAttribute="top" secondItem="bm2-4T-QJ1" secondAttribute="bottom" constant="5" id="3qj-GZ-SmH"/>
-                            <constraint firstItem="hkw-He-3fH" firstAttribute="trailing" secondItem="z4Z-TN-jZH" secondAttribute="trailing" constant="162" id="CKI-uG-wHg"/>
+                            <constraint firstItem="hkw-He-3fH" firstAttribute="trailing" secondItem="z4Z-TN-jZH" secondAttribute="trailing" constant="150" id="CKI-uG-wHg"/>
                             <constraint firstItem="aHx-yQ-3Mp" firstAttribute="top" secondItem="hkw-He-3fH" secondAttribute="top" constant="44" id="DjW-Aj-5KU"/>
                             <constraint firstItem="aHx-yQ-3Mp" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="cu7-IU-h2O" secondAttribute="trailing" constant="8" symbolic="YES" id="E7X-qI-Z0W"/>
                             <constraint firstItem="rki-uF-R04" firstAttribute="leading" secondItem="hkw-He-3fH" secondAttribute="leading" id="HN7-fD-Jge"/>
+                            <constraint firstItem="xRz-Jq-RaR" firstAttribute="top" secondItem="hkw-He-3fH" secondAttribute="top" constant="5" id="IpP-KM-qac"/>
                             <constraint firstItem="rki-uF-R04" firstAttribute="top" secondItem="KGp-rh-hgA" secondAttribute="bottom" constant="8" id="KVc-z6-dr5"/>
                             <constraint firstItem="hkw-He-3fH" firstAttribute="bottom" secondItem="bm2-4T-QJ1" secondAttribute="bottom" constant="20" id="L5g-EI-YDx"/>
                             <constraint firstItem="bm2-4T-QJ1" firstAttribute="centerX" secondItem="hkw-He-3fH" secondAttribute="centerX" id="Q5x-gh-ItX"/>
                             <constraint firstItem="hkw-He-3fH" firstAttribute="trailing" secondItem="rki-uF-R04" secondAttribute="trailing" id="ag8-1B-srT"/>
+                            <constraint firstItem="hkw-He-3fH" firstAttribute="trailing" secondItem="xRz-Jq-RaR" secondAttribute="trailing" constant="135" id="bad-hw-h4B"/>
                             <constraint firstItem="cu7-IU-h2O" firstAttribute="leading" secondItem="hkw-He-3fH" secondAttribute="leading" constant="44" id="db3-eY-Nu3"/>
                             <constraint firstItem="bm2-4T-QJ1" firstAttribute="top" secondItem="rki-uF-R04" secondAttribute="bottom" constant="22" id="dkZ-xR-jQZ"/>
+                            <constraint firstItem="xRz-Jq-RaR" firstAttribute="leading" secondItem="hkw-He-3fH" secondAttribute="leading" constant="135" id="kJz-qu-kXc"/>
                             <constraint firstItem="hkw-He-3fH" firstAttribute="trailing" secondItem="aHx-yQ-3Mp" secondAttribute="trailing" constant="44" id="lYg-M3-RZi"/>
                             <constraint firstItem="KGp-rh-hgA" firstAttribute="top" secondItem="cu7-IU-h2O" secondAttribute="bottom" constant="20" id="nmb-QL-vSf"/>
                             <constraint firstItem="cu7-IU-h2O" firstAttribute="top" secondItem="hkw-He-3fH" secondAttribute="top" constant="44" id="pZQ-GK-g6Z"/>
-                            <constraint firstItem="z4Z-TN-jZH" firstAttribute="leading" secondItem="hkw-He-3fH" secondAttribute="leading" constant="163" id="xmH-Uf-xxP"/>
+                            <constraint firstItem="z4Z-TN-jZH" firstAttribute="leading" secondItem="hkw-He-3fH" secondAttribute="leading" constant="150" id="xmH-Uf-xxP"/>
                             <constraint firstItem="KGp-rh-hgA" firstAttribute="centerX" secondItem="hkw-He-3fH" secondAttribute="centerX" id="zQl-QF-Amb"/>
                         </constraints>
                     </view>

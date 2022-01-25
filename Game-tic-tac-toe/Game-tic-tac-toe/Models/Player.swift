@@ -12,8 +12,6 @@ public enum Player: CaseIterable {
     case second
     case computer
     
-    
-    
     var next: Player {
         switch self {
         case .first: return gameModeSigleton.shared.gameMode == .versusComputer ? .computer: Player.second
@@ -21,7 +19,6 @@ public enum Player: CaseIterable {
         case .computer: return .first
         }
     }
-
     
     var markViewPrototype: MarkView {
         switch self {
