@@ -7,6 +7,23 @@
 
 import Foundation
 
+//MARK: Pattern Command protocol
+
+public enum LogAction {
+    
+    case playerInput(player: Player, position: GameboardPosition)
+    
+    case gameFinished(winner: Player?)
+    
+    case restartGame
+    
+}
+
+public func Log(_ action: LogAction) {
+    let command = LogCommand(action: action)
+    LoggerInvoker.shared.addLogCommand(command)
+}
+
 final class LogCommand {
     
     let action: LogAction

@@ -7,7 +7,6 @@
 
 import UIKit
 
-
 class MenuViewController: UIViewController {
     
     @IBOutlet var gameVSComputerButton: UIButton!
@@ -23,11 +22,13 @@ class MenuViewController: UIViewController {
         performSegue(withIdentifier: "goToGame", sender: self)
     }
     
+    @IBAction func FiveByFiveMode(_ sender: Any) {
+        gameModeSigleton.shared.gameMode = .fiveByFive
+        performSegue(withIdentifier: "goToGame", sender: self)
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-    
-    
 }
 
 

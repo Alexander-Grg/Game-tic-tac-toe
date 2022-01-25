@@ -7,7 +7,6 @@
 
 import Foundation
 
-
 public class ComputerState: GameState {
     
     public let player: Player

@@ -7,6 +7,11 @@
 
 import Foundation
 
+enum GameMode {
+    case versusComputer
+    case versusHuman
+    case fiveByFive
+}
 
 public protocol GameState {
     
@@ -15,11 +20,6 @@ public protocol GameState {
     func begin()
     
     func addMark(at position: GameboardPosition)
-    
 }
 
-enum GameMode {
-    case versusComputer
-    case versusHuman
-    case fiveByFive
-}
+

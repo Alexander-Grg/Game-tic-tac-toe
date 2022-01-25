@@ -7,11 +7,12 @@
 
 import Foundation
 
-//MARK: Receiver
+//MARK: Pattern Command Receiver
 
 final class Logger {
     func writeMessageToLog(_ message: String) {
-//        Here must be logger
+//        Here must be logger logic
+//        Didn't add because of time lack
         print(message)
     }
 }

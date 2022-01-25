@@ -55,6 +55,24 @@
                                     <action selector="gameWithPlayerMode:" destination="wDj-In-UHg" eventType="touchUpInside" id="POj-v8-CWY"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qpp-KL-U3B">
+                                <rect key="frame" x="116" y="387" width="185" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="tinted">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="Five by Five">
+                                            <attributes>
+                                                <font key="NSFont" size="18" name="Helvetica"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="FiveByFiveMode:" destination="wDj-In-UHg" eventType="touchUpInside" id="Msh-20-lMq"/>
+                                    <action selector="gameWithPlayerMode:" destination="wDj-In-UHg" eventType="touchUpInside" id="xju-vV-7cn"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6o2-iK-DrK"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -63,7 +81,10 @@
                             <constraint firstItem="6o2-iK-DrK" firstAttribute="trailing" secondItem="c2I-a4-zV8" secondAttribute="trailing" constant="20" id="4y1-TA-sBy"/>
                             <constraint firstItem="c2I-a4-zV8" firstAttribute="leading" secondItem="6o2-iK-DrK" secondAttribute="leading" constant="20" id="53Z-by-Pyh"/>
                             <constraint firstItem="6o2-iK-DrK" firstAttribute="trailing" secondItem="gUs-Vn-P9c" secondAttribute="trailing" constant="115" id="FTe-uB-QFz"/>
+                            <constraint firstItem="6o2-iK-DrK" firstAttribute="trailing" secondItem="qpp-KL-U3B" secondAttribute="trailing" constant="113" id="J7R-Zg-qtK"/>
                             <constraint firstItem="c2I-a4-zV8" firstAttribute="top" secondItem="6o2-iK-DrK" secondAttribute="top" constant="148" id="LaI-dy-ci0"/>
+                            <constraint firstItem="qpp-KL-U3B" firstAttribute="leading" secondItem="6o2-iK-DrK" secondAttribute="leading" constant="116" id="U54-1b-y00"/>
+                            <constraint firstItem="qpp-KL-U3B" firstAttribute="top" secondItem="Nqj-WC-eqo" secondAttribute="bottom" constant="25" id="XU6-Sl-X2g"/>
                             <constraint firstItem="6o2-iK-DrK" firstAttribute="trailing" secondItem="Nqj-WC-eqo" secondAttribute="trailing" constant="113" id="eEo-ko-M13"/>
                             <constraint firstItem="Nqj-WC-eqo" firstAttribute="top" secondItem="gUs-Vn-P9c" secondAttribute="bottom" constant="25" id="fKn-Nx-N92"/>
                             <constraint firstItem="gUs-Vn-P9c" firstAttribute="leading" secondItem="6o2-iK-DrK" secondAttribute="leading" constant="116" id="nBF-4q-Vq0"/>
@@ -139,12 +160,6 @@
                                     <action selector="exitButton:" destination="adL-cc-Pau" eventType="touchUpInside" id="QQf-k9-S1Z"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Press the screen for computer to make a move" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xRz-Jq-RaR">
-                                <rect key="frame" x="135" y="49" width="144" height="61"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="hkw-He-3fH"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -154,15 +169,12 @@
                             <constraint firstItem="aHx-yQ-3Mp" firstAttribute="top" secondItem="hkw-He-3fH" secondAttribute="top" constant="44" id="DjW-Aj-5KU"/>
                             <constraint firstItem="aHx-yQ-3Mp" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="cu7-IU-h2O" secondAttribute="trailing" constant="8" symbolic="YES" id="E7X-qI-Z0W"/>
                             <constraint firstItem="rki-uF-R04" firstAttribute="leading" secondItem="hkw-He-3fH" secondAttribute="leading" id="HN7-fD-Jge"/>
-                            <constraint firstItem="xRz-Jq-RaR" firstAttribute="top" secondItem="hkw-He-3fH" secondAttribute="top" constant="5" id="IpP-KM-qac"/>
                             <constraint firstItem="rki-uF-R04" firstAttribute="top" secondItem="KGp-rh-hgA" secondAttribute="bottom" constant="8" id="KVc-z6-dr5"/>
                             <constraint firstItem="hkw-He-3fH" firstAttribute="bottom" secondItem="bm2-4T-QJ1" secondAttribute="bottom" constant="20" id="L5g-EI-YDx"/>
                             <constraint firstItem="bm2-4T-QJ1" firstAttribute="centerX" secondItem="hkw-He-3fH" secondAttribute="centerX" id="Q5x-gh-ItX"/>
                             <constraint firstItem="hkw-He-3fH" firstAttribute="trailing" secondItem="rki-uF-R04" secondAttribute="trailing" id="ag8-1B-srT"/>
-                            <constraint firstItem="hkw-He-3fH" firstAttribute="trailing" secondItem="xRz-Jq-RaR" secondAttribute="trailing" constant="135" id="bad-hw-h4B"/>
                             <constraint firstItem="cu7-IU-h2O" firstAttribute="leading" secondItem="hkw-He-3fH" secondAttribute="leading" constant="44" id="db3-eY-Nu3"/>
                             <constraint firstItem="bm2-4T-QJ1" firstAttribute="top" secondItem="rki-uF-R04" secondAttribute="bottom" constant="22" id="dkZ-xR-jQZ"/>
-                            <constraint firstItem="xRz-Jq-RaR" firstAttribute="leading" secondItem="hkw-He-3fH" secondAttribute="leading" constant="135" id="kJz-qu-kXc"/>
                             <constraint firstItem="hkw-He-3fH" firstAttribute="trailing" secondItem="aHx-yQ-3Mp" secondAttribute="trailing" constant="44" id="lYg-M3-RZi"/>
                             <constraint firstItem="KGp-rh-hgA" firstAttribute="top" secondItem="cu7-IU-h2O" secondAttribute="bottom" constant="20" id="nmb-QL-vSf"/>
                             <constraint firstItem="cu7-IU-h2O" firstAttribute="top" secondItem="hkw-He-3fH" secondAttribute="top" constant="44" id="pZQ-GK-g6Z"/>
