@@ -7,10 +7,7 @@
 
 import Foundation
 
-
 public class PlayerInputState: GameState {
-    
-    
     
     public let player: Player
     public let markViewPrototype: MarkView
@@ -27,6 +24,7 @@ public class PlayerInputState: GameState {
         self.gameBoardView = gameBoardView
         self.markViewPrototype = markViewProtorype
     }
+    
     public func begin() {
         switch self.player {
         case .first:

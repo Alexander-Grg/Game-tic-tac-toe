@@ -1,5 +1,5 @@
 //
-//  GameStateCommand.swift
+//  GameStateCommandFiveToFive.swift
 //  Game-tic-tac-toe
 //
 //  Created by Alexander Grigoryev on 25.01.2022.
@@ -7,11 +7,11 @@
 
 import Foundation
 
-class Command {
+class CommandFiveToFive {
     
-    let action: Action
+    let action: GameAction
     
-    init(action: Action) {
+    init(action: GameAction) {
         self.action = action
     }
     

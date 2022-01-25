@@ -10,10 +10,8 @@ import Foundation
 class Invoker {
     
     public static let shared = Invoker()
-    
     private let receiver = Receiver()
     private let bufferSize = 5
-    
     private var commands: [Command] = []
     
     func addLogCommand(command: Command) {

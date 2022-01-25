@@ -29,10 +29,15 @@
 		6295A9972799682E000A7FC7 /* PlayerInputState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6295A9962799682E000A7FC7 /* PlayerInputState.swift */; };
 		6295A99B27996D54000A7FC7 /* GameEndedState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6295A99A27996D54000A7FC7 /* GameEndedState.swift */; };
 		62AB154527A00018000C5A5F /* PlayerMove.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62AB154427A00018000C5A5F /* PlayerMove.swift */; };
-		62B6357E27998A4F0011D2AC /* LogAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62B6357D27998A4F0011D2AC /* LogAction.swift */; };
 		62B6358027998ACB0011D2AC /* LogCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62B6357F27998ACB0011D2AC /* LogCommand.swift */; };
 		62B6358227998C970011D2AC /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62B6358127998C970011D2AC /* Logger.swift */; };
 		62B6358427998CFF0011D2AC /* LoggerInvoker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62B6358327998CFF0011D2AC /* LoggerInvoker.swift */; };
+		62F9E05D27A0168B00BFDE0B /* FiveToFiveState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62F9E05C27A0168B00BFDE0B /* FiveToFiveState.swift */; };
+		62F9E05F27A017BB00BFDE0B /* GameStateCommandInvoker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62F9E05E27A017BB00BFDE0B /* GameStateCommandInvoker.swift */; };
+		62F9E06127A017E200BFDE0B /* GameStateCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62F9E06027A017E200BFDE0B /* GameStateCommand.swift */; };
+		62F9E06327A0180D00BFDE0B /* ReceiverFiveToFive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62F9E06227A0180D00BFDE0B /* ReceiverFiveToFive.swift */; };
+		62F9E06527A0184900BFDE0B /* GameExecuteState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62F9E06427A0184900BFDE0B /* GameExecuteState.swift */; };
+		62F9E06727A0198F00BFDE0B /* GameAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62F9E06627A0198F00BFDE0B /* GameAction.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,10 +65,15 @@
 		6295A9962799682E000A7FC7 /* PlayerInputState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerInputState.swift; sourceTree = "<group>"; };
 		6295A99A27996D54000A7FC7 /* GameEndedState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameEndedState.swift; sourceTree = "<group>"; };
 		62AB154427A00018000C5A5F /* PlayerMove.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerMove.swift; sourceTree = "<group>"; };
-		62B6357D27998A4F0011D2AC /* LogAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogAction.swift; sourceTree = "<group>"; };
 		62B6357F27998ACB0011D2AC /* LogCommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogCommand.swift; sourceTree = "<group>"; };
 		62B6358127998C970011D2AC /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		62B6358327998CFF0011D2AC /* LoggerInvoker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggerInvoker.swift; sourceTree = "<group>"; };
+		62F9E05C27A0168B00BFDE0B /* FiveToFiveState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiveToFiveState.swift; sourceTree = "<group>"; };
+		62F9E05E27A017BB00BFDE0B /* GameStateCommandInvoker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameStateCommandInvoker.swift; sourceTree = "<group>"; };
+		62F9E06027A017E200BFDE0B /* GameStateCommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameStateCommand.swift; sourceTree = "<group>"; };
+		62F9E06227A0180D00BFDE0B /* ReceiverFiveToFive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiverFiveToFive.swift; sourceTree = "<group>"; };
+		62F9E06427A0184900BFDE0B /* GameExecuteState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameExecuteState.swift; sourceTree = "<group>"; };
+		62F9E06627A0198F00BFDE0B /* GameAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameAction.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,18 +147,39 @@
 		622C30B92794AF0C00DD63A9 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				62F9E05B27A0151C00BFDE0B /* CommandStateFiveToFiveMode */,
+				62F9E05A27A0143B00BFDE0B /* CommandLogger */,
 				622C30BA2794AF2900DD63A9 /* GameboardPosition.swift */,
 				622C30BC2794AF7100DD63A9 /* GameboardSize.swift */,
 				622C30BE2794AFA300DD63A9 /* Gameboard.swift */,
 				622C30C02794AFCE00DD63A9 /* Player.swift */,
-				62B6357D27998A4F0011D2AC /* LogAction.swift */,
-				62B6357F27998ACB0011D2AC /* LogCommand.swift */,
-				62B6358127998C970011D2AC /* Logger.swift */,
-				62B6358327998CFF0011D2AC /* LoggerInvoker.swift */,
 				623580F6279AD68900229555 /* gameModeSingleTon.swift */,
 				62AB154427A00018000C5A5F /* PlayerMove.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		62F9E05A27A0143B00BFDE0B /* CommandLogger */ = {
+			isa = PBXGroup;
+			children = (
+				62B6358127998C970011D2AC /* Logger.swift */,
+				62B6357F27998ACB0011D2AC /* LogCommand.swift */,
+				62B6358327998CFF0011D2AC /* LoggerInvoker.swift */,
+			);
+			path = CommandLogger;
+			sourceTree = "<group>";
+		};
+		62F9E05B27A0151C00BFDE0B /* CommandStateFiveToFiveMode */ = {
+			isa = PBXGroup;
+			children = (
+				62F9E06427A0184900BFDE0B /* GameExecuteState.swift */,
+				62F9E05C27A0168B00BFDE0B /* FiveToFiveState.swift */,
+				62F9E05E27A017BB00BFDE0B /* GameStateCommandInvoker.swift */,
+				62F9E06027A017E200BFDE0B /* GameStateCommand.swift */,
+				62F9E06227A0180D00BFDE0B /* ReceiverFiveToFive.swift */,
+				62F9E06627A0198F00BFDE0B /* GameAction.swift */,
+			);
+			path = CommandStateFiveToFiveMode;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -228,8 +259,11 @@
 				6295A9972799682E000A7FC7 /* PlayerInputState.swift in Sources */,
 				623580F3279AADF800229555 /* ComputerState.swift in Sources */,
 				622C30C32794B04B00DD63A9 /* Referee.swift in Sources */,
+				62F9E06127A017E200BFDE0B /* GameStateCommand.swift in Sources */,
 				622C30BF2794AFA300DD63A9 /* Gameboard.swift in Sources */,
 				62B6358427998CFF0011D2AC /* LoggerInvoker.swift in Sources */,
+				62F9E05F27A017BB00BFDE0B /* GameStateCommandInvoker.swift in Sources */,
+				62F9E05D27A0168B00BFDE0B /* FiveToFiveState.swift in Sources */,
 				622C30C12794AFCE00DD63A9 /* Player.swift in Sources */,
 				622C30BD2794AF7100DD63A9 /* GameboardSize.swift in Sources */,
 				62B6358227998C970011D2AC /* Logger.swift in Sources */,
@@ -239,11 +273,13 @@
 				622C309A2794AB7200DD63A9 /* AppDelegate.swift in Sources */,
 				622C309C2794AB7200DD63A9 /* SceneDelegate.swift in Sources */,
 				622C30BB2794AF2900DD63A9 /* GameboardPosition.swift in Sources */,
+				62F9E06327A0180D00BFDE0B /* ReceiverFiveToFive.swift in Sources */,
 				623580F7279AD68900229555 /* gameModeSingleTon.swift in Sources */,
 				62B6358027998ACB0011D2AC /* LogCommand.swift in Sources */,
-				62B6357E27998A4F0011D2AC /* LogAction.swift in Sources */,
 				622C30B62794AE8600DD63A9 /* Oview.swift in Sources */,
 				622C30B42794AE4C00DD63A9 /* MarkView.swift in Sources */,
+				62F9E06727A0198F00BFDE0B /* GameAction.swift in Sources */,
+				62F9E06527A0184900BFDE0B /* GameExecuteState.swift in Sources */,
 				620F0164279ED9C700F7796F /* GameState.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

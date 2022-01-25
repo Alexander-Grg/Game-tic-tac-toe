@@ -14,8 +14,8 @@ class ReceiverFiveToFive {
     }
 }
 
-public func Log(action: Action) {
+public func Log(action: GameAction) {
     
-    let command = Command(action: action)
+    let command = CommandFiveToFive(action: action)
     Invoker.shared.addLogCommand(command: command)
 }

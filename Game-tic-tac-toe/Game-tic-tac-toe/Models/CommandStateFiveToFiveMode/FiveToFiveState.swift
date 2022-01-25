@@ -16,7 +16,7 @@ class FiveToFiveState: GameState {
     private weak var gameViewController: GameViewController?
     private weak var gameBoard: Gameboard?
     private weak var gameBoardView: GameBoardView?
-
+    
     init(player: Player, gameViewController: GameViewController,
          gameBoard: Gameboard, gameBoardView: GameBoardView, markViewPrototype: MarkView) {
         self.player = player
@@ -25,7 +25,7 @@ class FiveToFiveState: GameState {
         self.gameBoardView = gameBoardView
         self.markViewPrototype = markViewPrototype
     }
-
+    
     func begin() {
         switch player {
         case .first:
@@ -35,18 +35,18 @@ class FiveToFiveState: GameState {
             gameViewController?.firstPlayerTurnLabel.isHidden = true
             gameViewController?.secondPlayerTurnLabel.isHidden = false
         }
-
+        
         gameViewController?.winnerLabel.isHidden = true
     }
-
+    
     func addMark(at position: GameboardPosition) {
         Log(action: .playerSetMark(player: player, position: position))
-
+        
         guard let gameBoardView = gameBoardView,
               gameBoardView.canPlaceMarkView(at: position) else {
-            return
-        }
-
+                  return
+              }
+        
         gameBoard?.setPlayer(player, at: position)
         gameBoardView.placeMarkView(markViewPrototype.copy(), at: position)
         

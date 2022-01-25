@@ -16,6 +16,5 @@ final class gameModeSigleton {
     var numberOfMovesPlayer1: [PlayerMove] = []
     var numberOfMovesPlayer2: [PlayerMove] = []
     
-    
     private init (){}
 }
