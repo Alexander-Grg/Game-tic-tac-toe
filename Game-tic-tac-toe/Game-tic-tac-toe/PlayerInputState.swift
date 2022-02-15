@@ -49,5 +49,3 @@ public class PlayerInputState: GameState {
         self.isCompleted = true
     }
 }
-
-

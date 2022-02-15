@@ -10,11 +10,11 @@ import Foundation
 class Invoker {
     
     public static let shared = Invoker()
-    private let receiver = Receiver()
+    private let receiver = ReceiverFiveToFive()
     private let bufferSize = 5
-    private var commands: [Command] = []
+    private var commands: [CommandFiveToFive] = []
     
-    func addLogCommand(command: Command) {
+    func addLogCommand(command: CommandFiveToFive) {
         commands.append(command)
         execute()
     }

@@ -8,11 +8,10 @@
 import Foundation
 
 //MARK: Pattern Command Receiver
-
 final class Logger {
     func writeMessageToLog(_ message: String) {
-//        Here must be logger logic
-//        Didn't add because of time lack
+        //        Here must be logger logic
+        //        Didn't add because of time lack
         print(message)
     }
 }

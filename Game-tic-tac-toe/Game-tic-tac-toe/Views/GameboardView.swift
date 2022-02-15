@@ -4,8 +4,8 @@
 //
 //  Created by Alexander Grigoryev on 16.01.2022.
 //
-
 import Foundation
+
 import UIKit
 
 public class GameBoardView: UIView {
