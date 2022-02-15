@@ -8,7 +8,6 @@
 import Foundation
 
 //MARK: Pattern Command protocol
-
 public enum LogAction {
     
     case playerInput(player: Player, position: GameboardPosition)

@@ -21,5 +21,3 @@ public protocol GameState {
     
     func addMark(at position: GameboardPosition)
 }
-
-

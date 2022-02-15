@@ -20,7 +20,7 @@ extension Copying {
 }
 
 public class MarkView: UIView, Copying {
- 
+    
     // MARK: - Properties
     
     public var lineColor: UIColor = .black
@@ -142,6 +142,3 @@ public class MarkView: UIView, Copying {
         // meant for subclasses to override
     }
 }
-
-
-
