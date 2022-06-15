@@ -11,7 +11,7 @@ import Foundation
 final class Logger {
     func writeMessageToLog(_ message: String) {
         //        Here must be logger logic
-        //        Didn't add because of time lack
+        //        Didn't add because a lack of time
         print(message)
     }
 }

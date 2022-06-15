@@ -106,57 +106,137 @@
 		622C30982794AB7200DD63A9 /* Game-tic-tac-toe */ = {
 			isa = PBXGroup;
 			children = (
-				623580F4279AC2F000229555 /* MenuViewController.swift */,
+				627C315C2859E6B800C9D2A8 /* Resources */,
+				627C315B2859E6A500C9D2A8 /* Environment */,
+				627C314B2859E09E00C9D2A8 /* App */,
+			);
+			path = "Game-tic-tac-toe";
+			sourceTree = "<group>";
+		};
+		627C314B2859E09E00C9D2A8 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				622C30992794AB7200DD63A9 /* AppDelegate.swift */,
+				622C309B2794AB7200DD63A9 /* SceneDelegate.swift */,
+				627C314F2859E0BB00C9D2A8 /* Flows */,
+				627C314D2859E0AD00C9D2A8 /* Entity */,
+				627C314C2859E0A400C9D2A8 /* BusinessLogic */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		627C314C2859E0A400C9D2A8 /* BusinessLogic */ = {
+			isa = PBXGroup;
+			children = (
+				62F9E05A27A0143B00BFDE0B /* CommandLogger */,
+				623580F6279AD68900229555 /* gameModeSingleTon.swift */,
+			);
+			path = BusinessLogic;
+			sourceTree = "<group>";
+		};
+		627C314D2859E0AD00C9D2A8 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				622C30BC2794AF7100DD63A9 /* GameboardSize.swift */,
+				622C30BA2794AF2900DD63A9 /* GameboardPosition.swift */,
+				62AB154427A00018000C5A5F /* PlayerMove.swift */,
+				622C30C02794AFCE00DD63A9 /* Player.swift */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		627C314F2859E0BB00C9D2A8 /* Flows */ = {
+			isa = PBXGroup;
+			children = (
+				627C31522859E0E300C9D2A8 /* Menu */,
+				627C31512859E0D700C9D2A8 /* Game */,
+			);
+			path = Flows;
+			sourceTree = "<group>";
+		};
+		627C31512859E0D700C9D2A8 /* Game */ = {
+			isa = PBXGroup;
+			children = (
+				622C30BE2794AFA300DD63A9 /* Gameboard.swift */,
+				627C31562859E23B00C9D2A8 /* Views */,
+				627C315A2859E39800C9D2A8 /* GameModes */,
+				627C31542859E16000C9D2A8 /* GameStates */,
+				627C31532859E15500C9D2A8 /* Controller */,
+			);
+			path = Game;
+			sourceTree = "<group>";
+		};
+		627C31522859E0E300C9D2A8 /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+				627C31552859E17200C9D2A8 /* Controller */,
+			);
+			path = Menu;
+			sourceTree = "<group>";
+		};
+		627C31532859E15500C9D2A8 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
 				622C30AD2794AC3700DD63A9 /* GameViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		627C31542859E16000C9D2A8 /* GameStates */ = {
+			isa = PBXGroup;
+			children = (
 				6295A9962799682E000A7FC7 /* PlayerInputState.swift */,
 				623580F2279AADF800229555 /* ComputerState.swift */,
 				6295A99A27996D54000A7FC7 /* GameEndedState.swift */,
 				620F0163279ED9C700F7796F /* GameState.swift */,
 				622C30C22794B04B00DD63A9 /* Referee.swift */,
-				622C30B92794AF0C00DD63A9 /* Models */,
-				622C30AF2794ADB700DD63A9 /* Views */,
-				622C30992794AB7200DD63A9 /* AppDelegate.swift */,
-				622C309B2794AB7200DD63A9 /* SceneDelegate.swift */,
-				622C30A22794AB7300DD63A9 /* Assets.xcassets */,
-				622C30A42794AB7300DD63A9 /* LaunchScreen.storyboard */,
-				622E5A9B284638F0008A9A25 /* Main.storyboard */,
-				622C30A72794AB7300DD63A9 /* Info.plist */,
 			);
-			path = "Game-tic-tac-toe";
+			path = GameStates;
 			sourceTree = "<group>";
 		};
-		622C30AF2794ADB700DD63A9 /* Views */ = {
+		627C31552859E17200C9D2A8 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				622C30B22794AE2100DD63A9 /* MarkViews */,
-				622C30B02794ADDD00DD63A9 /* GameboardView.swift */,
+				623580F4279AC2F000229555 /* MenuViewController.swift */,
 			);
-			path = Views;
+			path = Controller;
 			sourceTree = "<group>";
 		};
-		622C30B22794AE2100DD63A9 /* MarkViews */ = {
+		627C31562859E23B00C9D2A8 /* Views */ = {
 			isa = PBXGroup;
 			children = (
 				622C30B32794AE4C00DD63A9 /* MarkView.swift */,
 				622C30B52794AE8600DD63A9 /* Oview.swift */,
 				622C30B72794AEAB00DD63A9 /* Xview.swift */,
+				622C30B02794ADDD00DD63A9 /* GameboardView.swift */,
 			);
-			path = MarkViews;
+			path = Views;
 			sourceTree = "<group>";
 		};
-		622C30B92794AF0C00DD63A9 /* Models */ = {
+		627C315A2859E39800C9D2A8 /* GameModes */ = {
 			isa = PBXGroup;
 			children = (
 				62F9E05B27A0151C00BFDE0B /* CommandStateFiveToFiveMode */,
-				62F9E05A27A0143B00BFDE0B /* CommandLogger */,
-				622C30BA2794AF2900DD63A9 /* GameboardPosition.swift */,
-				622C30BC2794AF7100DD63A9 /* GameboardSize.swift */,
-				622C30BE2794AFA300DD63A9 /* Gameboard.swift */,
-				622C30C02794AFCE00DD63A9 /* Player.swift */,
-				623580F6279AD68900229555 /* gameModeSingleTon.swift */,
-				62AB154427A00018000C5A5F /* PlayerMove.swift */,
 			);
-			path = Models;
+			path = GameModes;
+			sourceTree = "<group>";
+		};
+		627C315B2859E6A500C9D2A8 /* Environment */ = {
+			isa = PBXGroup;
+			children = (
+				622C30A72794AB7300DD63A9 /* Info.plist */,
+			);
+			path = Environment;
+			sourceTree = "<group>";
+		};
+		627C315C2859E6B800C9D2A8 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				622C30A22794AB7300DD63A9 /* Assets.xcassets */,
+				622C30A42794AB7300DD63A9 /* LaunchScreen.storyboard */,
+				622E5A9B284638F0008A9A25 /* Main.storyboard */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		62F9E05A27A0143B00BFDE0B /* CommandLogger */ = {
